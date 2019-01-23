@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 
-import { Provider } from 'react-redux';
-import store from './store';
+import { Provider } from "react-redux";
+import store from "./store";
 
 import AppNavBar from "./components/layout/AppNavbar";
 import Dashboard from "./components/layout/Dashboard";
-
 
 class App extends Component {
   render() {
