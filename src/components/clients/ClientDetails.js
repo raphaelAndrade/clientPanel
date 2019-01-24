@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { firestoreConnect } from "react-redux-firebase";
 import Spinner from "../layout/Spinner";
+import { WSATYPE_NOT_FOUND } from "constants";
 
 class ClientDetails extends Component {
   render() {
@@ -71,3 +72,4 @@ export default compose(
     client: ordered.client && ordered.client[0]
   }))
 )(ClientDetails);
+
