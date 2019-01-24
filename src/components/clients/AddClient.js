@@ -34,7 +34,7 @@ class AddClient extends Component {
 
   render() {
     return (
-      <div>
+      <div> 
         <div className="row">
           <div className="col-md-6">
             <Link to="/" className="btn btn-link">
