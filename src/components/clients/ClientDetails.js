@@ -158,4 +158,3 @@ export default compose(
     client: ordered.client && ordered.client[0]
   }))
 )(ClientDetails);
-
