@@ -7,9 +7,23 @@ import { firestoreConnect } from "react-redux-firebase";
 import Spinner from "../layout/Spinner";
 
 class EditClients extends Component {
+  constructor(props) {
+    super(props);
+
+    // Create refs
+    this.firstNameInput = React.createRef();
+    this.lastNameInput = React.createRef();
+    this.emailInput = React.createRef();
+    this.phoneInput = React.createRef();
+  }
+
+  onSubmit = e => {
+    e.preventDefault();
+    const { client, firestore } = this.props;
+  };
+
   render() {
     const { client } = this.props;
-
     if (client) {
       return (
         <div>
@@ -32,6 +46,7 @@ class EditClients extends Component {
                     name="firstName"
                     minLength="2"
                     required
+                    ref={this.firstNameInput}
                     defaultValue={client.firstName}
                   />
                 </div>
@@ -43,6 +58,7 @@ class EditClients extends Component {
                     name="lastName"
                     minLength="2"
                     required
+                    ref={this.lastNameInput}
                     defaultValue={client.lastName}
                   />
                 </div>
@@ -53,6 +69,7 @@ class EditClients extends Component {
                     className="form-control"
                     name="email"
                     required
+                    ref={this.emailInput}
                     defaultValue={client.email}
                   />
                 </div>
@@ -63,6 +80,7 @@ class EditClients extends Component {
                     className="form-control"
                     name="phone"
                     minLength="10"
+                    ref={this.phoneInput}
                     required
                     defaultValue={client.phone}
                   />
@@ -73,6 +91,7 @@ class EditClients extends Component {
                     type="text"
                     className="form-control"
                     name="balance"
+                    ref={this.balanceInput}
                     defaultValue={client.balance}
                   />
                 </div>
