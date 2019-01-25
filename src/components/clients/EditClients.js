@@ -15,11 +15,29 @@ class EditClients extends Component {
     this.lastNameInput = React.createRef();
     this.emailInput = React.createRef();
     this.phoneInput = React.createRef();
+    this.balanceInput = React.createRef();
   }
 
   onSubmit = e => {
     e.preventDefault();
-    const { client, firestore } = this.props;
+    const { client, firestore, history } = this.props;
+
+    //Update Client
+    const updClient = {
+      firstName: this.firstNameInput.current.value,
+      lastName: this.lastNameInput.current.value,
+      email: this.emailInput.current.value,
+      phone: this.phoneInput.current.value,
+      balance:
+        this.balanceInput.current.value === ""
+          ? 0
+          : this.balanceInput.current.value
+    };
+
+    //Update client in firestore
+    firestore
+      .update({ collection: "clients", doc: client.id }, updClient)
+      .then(history.push("/"));
   };
 
   render() {
