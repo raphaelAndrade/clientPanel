@@ -34,6 +34,8 @@ class EditClients extends Component {
           : this.balanceInput.current.value
     };
 
+    // 
+
     //Update client in firestore
     firestore
       .update({ collection: "clients", doc: client.id }, updClient)
