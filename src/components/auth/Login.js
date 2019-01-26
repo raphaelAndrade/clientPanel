@@ -23,6 +23,7 @@ class Login extends Component {
         email,
         password
       })
+
       .catch(err => alert("Invalid Login Credentials"));
   };
   render() {
