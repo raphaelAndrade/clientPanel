@@ -9,14 +9,16 @@ class AppNavbar extends Component {
   state = {
     isAuthenticated: false
   };
+
   static getDerivedStateFromProps(props, state) {
     const { auth } = props;
+    console.log(auth);
 
-    if (auth.uid) {
-      return { isAuthenticated: true };
-    } else {
-      return { isAuthenticated: false };
-    }
+    // if (auth.uid) {
+    //   return { isAuthenticated: true };
+    // } else {
+    //   return { isAuthenticated: false };
+    // }
   }
 
   render() {
@@ -75,8 +77,10 @@ AppNavbar.propTypes = {
   firebase: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired
 };
+
 export default compose(
-  firebaseConnect(), connect((state, props) => ({
-    auth: state.firebase.auth
+  firebaseConnect(),
+  connect((state, props) => ({
+    auth: state.firebase
   }))
 )(AppNavbar);
