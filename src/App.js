@@ -5,7 +5,7 @@ import "./App.css";
 import { Provider } from "react-redux";
 import store from "./store";
 
-import AppNavBar from "./components/layout/AppNavbar";
+//import AppNavBar from "./components/layout/AppNavbar";
 import Dashboard from "./components/layout/Dashboard";
 import AddClient from "./components/clients/AddClient";
 import EditClients from "./components/clients/EditClients";
@@ -19,7 +19,7 @@ class App extends Component {
         <Router>
           <div className="App">
             <header className="App-header">
-              <AppNavBar />
+             { /*<AppNavBar />*/}
               <div className="container">
                 <Switch>
                   <Route exact path="/" component={Dashboard} />
