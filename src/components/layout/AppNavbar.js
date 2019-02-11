@@ -1,9 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-//import logo from "logo.png";
-
 class AppNavbar extends Component {
+  state = {
+    isAuthenticated: false
+  };
+
+  static getDerivedStateFromProps(props, state) {
+    const { auth } = props;
+    console.log(auth);
+
+    // if (auth.uid) {
+    //   return { isAuthenticated: true };
+    // } else {
+    //   return { isAuthenticated: false };
+    // }
+  }
+
   render() {
+    const { isAuthenticated } = this.state;
+    const { auth } = this.props;
     return (
       <div className="container-fluid">
         <div className="row">
