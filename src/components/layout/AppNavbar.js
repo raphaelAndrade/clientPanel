@@ -1,33 +1,44 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+//import logo from "logo.png";
 
 class AppNavbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-md navbar-dark bg-primary mb-4">
-        <div className="container">
-          <Link to="/" className="navbar-brand">
-            ClientPanel
-          </Link>
-          <button
-            className="navbar-toogle"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarMain"
-          >
-            <span className="navbar-toggler-icons" />
-          </button>
-          <div className="collapse navbar-collapse" id="navbarMain">
-            <ul className="navbar-nav mr-auto">
-              <li className="nav-item">
-                <Link to="/" className="nav-link">
-                  DashBoard
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-12">
+            { /*<a href="index.html">
+                        <img src="img/logo.png" alt="Logo Bce-Find" class="headerLogo">
+    </a> */}
+            <nav class="navbar navbar-expand-lg ">
+              <ul class="navbar-nav  mainMenu">
+                <li className=" nav-item">
+                  <Link
+                    to={"/"}
+                    title="Accessibility Checker"
+                  > Accessibility Checker
                 </Link>
-              </li>
-            </ul>
+                </li>
+                <li className=" nav-item">
+                  <Link
+                    to={"/"}
+                    title="Accessibility Checker"
+                  > About Us
+                </Link>
+                </li>
+                <li className=" nav-item">
+                  <Link
+                    to={"/"}
+                    title="Accessibility Checker"
+                  > Conctac Us
+                </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
-      </nav>
+      </div>
     );
   }
 }
